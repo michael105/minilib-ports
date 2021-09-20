@@ -2,8 +2,10 @@
 
 
 
-Different ports to minilib,
+Different ports of small programs to minilib,
 serving as testcases.
+
+Some are modified, some unchanged (besides the file minilib.conf).
 
 
 I collect them along with the static builds here.

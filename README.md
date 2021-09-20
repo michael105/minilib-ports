@@ -2,8 +2,10 @@
 
 
 
-Different ports to minilib,
+Different ports of small programs to minilib,
 serving as testcases.
+
+Some are modified, some unchanged (besides the file minilib.conf).
 
 
 I collect them along with the static builds here.
@@ -25,6 +27,7 @@ bin_x64/micro-http             2021-09-20             8192
 bin_x64/smu                    2021-09-20             10872
 bin_x64/snake                  2021-09-20             8204
 bin_x64/snake-mikro            2021-09-20             8204
+bin_x64/splitvt                2021-09-20             22488
 ==========================================================
-                                         size: 35472 Bytes
+                                         size: 57960 Bytes
 ```
