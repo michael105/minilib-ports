@@ -8,7 +8,8 @@ serving as testcases.
 
 I collect them along with the static builds here.
 
-All builds have been done with gcc 9.3.
+
+The directory ./bin_x64 contains static builds for linux, 64 bit.
 
 
 
