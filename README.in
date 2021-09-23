@@ -11,7 +11,9 @@ Some are modified, some unchanged (besides the file minilib.conf).
 I collect them along with the static builds here.
 
 
-The directory ./bin_x64 contains static builds for linux, 64 bit.
+The directory ./bin_x64 contains static binaries for linux, 64bit;
+built with gcc 9.3 (Gentoo).
+
 
 
 
