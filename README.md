@@ -2,7 +2,7 @@
 
 
 
-Compilation of small programs, compiled with (minilib)[https://github.com/michael105/minilib],
+Compilation of small programs, compiled with [https://github.com/michael105/minilib](minilib),
 serving as testcases.
 
 Some are modified, some unchanged (besides the file minilib.conf).
