@@ -1,13 +1,3 @@
-## state
-
-wip - compiles (11kB), but received ip isn't parsed correctly.
-
-;) Bug fix welcome.
-
-misc 2021
-
-
-
 
 # daft-dhcp-client
 
