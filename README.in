@@ -2,13 +2,20 @@
 
 
 
-Different ports of small programs to minilib,
+Compilation of small programs, compiled with (minilib)[https://github.com/michael105/minilib],
 serving as testcases.
 
 Some are modified, some unchanged (besides the file minilib.conf).
 
+Ideally, they should compile unmodified; 
+yet most problems have been a result of unwanted optimizations by gcc.
 
-I collect them along with the static builds here.
+However, especially the network stack of minilib seems to be a bit 'unmature'. 
+(or there might be slight differences to glibc/musl).
+Bug reports/fixes are very welcome.
+
+
+I collect the tools along with the static builds here.
 
 
 The directory ./bin_x64 contains static binaries for linux, 64bit;
