@@ -354,9 +354,7 @@ dhcp_print(struct dhcphdr* dhcp)
         if (dhcp->yiaddr) {
                 struct in_addr ip;
                 ip.s_addr = dhcp->yiaddr;
-                printf("Your-IP\n");
-					 printsl(inet_ntoa(ip));
-                printf("Your-IP2:  %d\n", ip.s_addr);
+                printf("Your-IP: %s\n",inet_ntoa(ip));
         }
 
         size_t len = 0;
@@ -497,7 +495,11 @@ main(int argc, char* argv[])
         };
 
         int long_index = 0;
+#ifdef MLIB
         while ((opt = getopt(argc, argv, "hvi:dr:q:m:t:",
+#else
+        while ((opt = getopt_long(argc, argv, "hvi:dr:q:m:t:",
+#endif
 		  
         //while ((opt = getopt_long(argc, argv, 
                    long_options, &long_index )) != -1) {
