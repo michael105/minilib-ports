@@ -1,6 +1,6 @@
 ## state
 
-wip - compiles, but sent ip isn't parsed correctly.
+wip - compiles (11kB), but received ip isn't parsed correctly.
 
 ;) Bug fix welcome.
 
