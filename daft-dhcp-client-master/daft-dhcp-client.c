@@ -315,7 +315,7 @@ addr_print(char* msg, uint8_t* pos, size_t count)
 {
         printf("%s", msg);
         while (count--) {
-                printf(" %u.%u.%u.%u", pos[0],
+                printf(" %0u.%0u.%0u.%0u", pos[0],
                        pos[1], pos[2], pos[3]);
         }
         printf("\n");
@@ -348,7 +348,7 @@ dhcp_print(struct dhcphdr* dhcp)
         if (dhcp->chaddr) {
                 struct ether_addr ether;
                 memcpy(ether.ether_addr_octet, dhcp->chaddr, ETHER_ADDR_LEN);
-                //printf("Your-MAC %s\n", ether_ntoa(&ether));
+                printf("Your-MAC %s\n", ether_ntoa(&ether));
         }
 
         if (dhcp->yiaddr) {
