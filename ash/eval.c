@@ -32,7 +32,8 @@
  * SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
 #ifndef lint
 #if 0
 static char sccsid[] = "@(#)eval.c	8.9 (Berkeley) 6/8/95";
@@ -41,21 +42,36 @@ __RCSID("$NetBSD: eval.c,v 1.178 2020/02/04 16:06:59 kre Exp $");
 #endif
 #endif /* not lint */
 
-#include <stdbool.h>
-#include <stdlib.h>
-#include <signal.h>
-#include <stdio.h>
-#include <string.h>
-#include <errno.h>
-#include <limits.h>
-#include <unistd.h>
-#include <sys/fcntl.h>
-#include <sys/stat.h>
-#include <sys/times.h>
-#include <sys/param.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <sys/sysctl.h>
+//#include <stdbool.h>
+//#include <stdbool.h>
+//#include <stdlib.h>
+//#include <stdlib.h>
+//#include <signal.h>
+//#include <signal.h>
+//#include <stdio.h>
+//#include <stdio.h>
+//#include <string.h>
+//#include <string.h>
+//#include <errno.h>
+//#include <errno.h>
+//#include <limits.h>
+//#include <limits.h>
+//#include <unistd.h>
+//#include <unistd.h>
+//#include <sys/fcntl.h>
+//#include <sys/fcntl.h>
+//#include <sys/stat.h>
+//#include <sys/stat.h>
+//#include <sys/times.h>
+//#include <sys/times.h>
+//#include <sys/param.h>
+//#include <sys/param.h>
+//#include <sys/types.h>
+//#include <sys/types.h>
+//#include <sys/wait.h>
+//#include <sys/wait.h>
+//#include <sys/sysctl.h>
+//#include <sys/sysctl.h>
 
 /*
  * Evaluate a command.
@@ -85,6 +101,8 @@ __RCSID("$NetBSD: eval.c,v 1.178 2020/02/04 16:06:59 kre Exp $");
 #include "nodenames.h"
 #include "myhistedit.h"
 #endif
+
+int bltincmd(int argc, char **argv);
 
 
 STATIC struct skipsave s_k_i_p;
@@ -215,6 +233,7 @@ evalcmd(int argc, char **argv)
 void
 evalstring(char *s, int flag)
 {
+	printf("Eval\n");
 	union node *n;
 	struct stackmark smark;
 	int last;
@@ -1303,7 +1322,7 @@ evalcommand(union node *cmd, int flgs, struct backcmd *backcmd)
 			argptr = argv + 1;
 			optptr = NULL;
 			/* and getopt */
-			optreset = 1;
+			//misc optreset = 1;
 			optind = 1;
 			builtin_flags = flags;
 			exitstatus = cmdentry.u.bltin(argc, argv);
@@ -1655,6 +1674,7 @@ execcmd(int argc, char **argv)
 	return 0;
 }
 
+#ifdef TIMESBUILTIN
 static int
 conv_time(clock_t ticks, char *seconds, size_t l)
 {
@@ -1703,3 +1723,5 @@ timescmd(int argc, char **argv)
 
 	return 0;
 }
+#endif
+

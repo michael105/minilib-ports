@@ -56,7 +56,8 @@
 
 #ifndef SHELL_H
 #define SHELL_H
-#include <sys/param.h>
+//#include <sys/param.h>
+//#include <sys/param.h>
 
 #define JOBS 1
 #ifndef BSD
@@ -78,7 +79,8 @@ typedef void *pointer;
 #endif
 #define MKINIT	/* empty */
 
-#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
 
 extern const char nullstr[1];		/* null string */
 

@@ -32,7 +32,8 @@
  * SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
 #ifndef lint
 #if 0
 static char sccsid[] = "@(#)memalloc.c	8.3 (Berkeley) 5/4/95";
@@ -41,8 +42,10 @@ __RCSID("$NetBSD: memalloc.c,v 1.33 2019/02/09 03:35:55 kre Exp $");
 #endif
 #endif /* not lint */
 
-#include <stdlib.h>
-#include <unistd.h>
+//#include <stdlib.h>
+//#include <stdlib.h>
+//#include <unistd.h>
+//#include <unistd.h>
 
 #include "shell.h"
 #include "output.h"

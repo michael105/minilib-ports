@@ -32,10 +32,11 @@
  * SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
 #ifndef lint
-__COPYRIGHT("@(#) Copyright (c) 1991, 1993\
- The Regents of the University of California.  All rights reserved.");
+//__COPYRIGHT("@(#) Copyright (c) 1991, 1993
+// The Regents of the University of California.  All rights reserved.");
 #endif /* not lint */
 
 #ifndef lint
@@ -46,14 +47,22 @@ __RCSID("$NetBSD: main.c,v 1.85 2020/02/07 01:25:08 fox Exp $");
 #endif
 #endif /* not lint */
 
-#include <errno.h>
-#include <stdio.h>
-#include <signal.h>
-#include <sys/stat.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <locale.h>
-#include <fcntl.h>
+//#include <errno.h>
+//#include <errno.h>
+//#include <stdio.h>
+//#include <stdio.h>
+//#include <signal.h>
+//#include <signal.h>
+//#include <sys/stat.h>
+//#include <sys/stat.h>
+//#include <unistd.h>
+//#include <unistd.h>
+//#include <stdlib.h>
+//#include <stdlib.h>
+//#include <locale.h>
+//#include <locale.h>
+//#include <fcntl.h>
+//#include <fcntl.h>
 
 
 #include "shell.h"

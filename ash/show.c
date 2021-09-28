@@ -34,7 +34,8 @@
  * SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
 #ifndef lint
 #if 0
 static char sccsid[] = "@(#)show.c	8.3 (Berkeley) 5/4/95";
@@ -43,17 +44,27 @@ __RCSID("$NetBSD: show.c,v 1.53 2019/02/14 13:27:59 kre Exp $");
 #endif
 #endif /* not lint */
 
-#include <stdint.h>
-#include <stdio.h>
-#include <stdarg.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <errno.h>
-#include <limits.h>
+//#include <stdint.h>
+//#include <stdint.h>
+//#include <stdio.h>
+//#include <stdio.h>
+//#include <stdarg.h>
+//#include <stdarg.h>
+//#include <stdlib.h>
+//#include <stdlib.h>
+//#include <unistd.h>
+//#include <unistd.h>
+//#include <fcntl.h>
+//#include <fcntl.h>
+//#include <errno.h>
+//#include <errno.h>
+//#include <limits.h>
+//#include <limits.h>
 
-#include <sys/types.h>
-#include <sys/uio.h>
+//#include <sys/types.h>
+//#include <sys/types.h>
+//#include <sys/uio.h>
+//#include <sys/uio.h>
 
 #include "shell.h"
 #include "parser.h"

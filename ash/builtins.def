@@ -79,7 +79,11 @@ shiftcmd	-s shift
 #ifndef SMALL
 specialvarcmd	specialvar
 #endif
+
+#ifdef TIMESCMD
 timescmd	-s times
+#endif
+
 trapcmd		-s trap
 truecmd		-s : -u true
 typecmd		type

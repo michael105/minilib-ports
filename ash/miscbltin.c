@@ -32,7 +32,8 @@
  * SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
 #ifndef lint
 #if 0
 static char sccsid[] = "@(#)miscbltin.c	8.4 (Berkeley) 5/4/95";
@@ -45,16 +46,26 @@ __RCSID("$NetBSD: miscbltin.c,v 1.44 2017/05/13 15:03:34 gson Exp $");
  * Miscelaneous builtins.
  */
 
-#include <sys/types.h>		/* quad_t */
-#include <sys/param.h>		/* BSD4_4 */
-#include <sys/stat.h>
-#include <sys/time.h>
-#include <sys/resource.h>
-#include <unistd.h>
-#include <stdint.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <errno.h>
+//#include <sys/types.h>		/* quad_t */
+//#include <sys/types.h>		/* quad_t */
+//#include <sys/param.h>		/* BSD4_4 */
+//#include <sys/param.h>		/* BSD4_4 */
+//#include <sys/stat.h>
+//#include <sys/stat.h>
+//#include <sys/time.h>
+//#include <sys/time.h>
+//#include <sys/resource.h>
+//#include <sys/resource.h>
+//#include <unistd.h>
+//#include <unistd.h>
+//#include <stdint.h>
+//#include <stdint.h>
+//#include <stdlib.h>
+//#include <stdlib.h>
+//#include <ctype.h>
+//#include <ctype.h>
+//#include <errno.h>
+//#include <errno.h>
 
 #include "shell.h"
 #include "options.h"
@@ -273,6 +284,9 @@ umaskcmd(int argc, char **argv)
 			} while (*++ap != '\0');
 			umask(mask);
 		} else {
+			//misc TODO ?
+			printf("Warning. No set/getmode\n");
+			/*
 			void *set;
 
 			INTOFF;
@@ -286,6 +300,7 @@ umaskcmd(int argc, char **argv)
 				    strerror(errno));
 
 			umask(~mask & 0777);
+			*/
 		}
 	}
 	return 0;
@@ -394,7 +409,8 @@ ulimitcmd(int argc, char **argv)
 		if (strcmp(p, "unlimited") == 0)
 			val = RLIM_INFINITY;
 		else {
-			val = (rlim_t) 0;
+			val = 0;
+			//val = (rlim_t) 0;
 
 			while ((c = *p++) >= '0' && c <= '9')
 				val = (val * 10) + (long)(c - '0');

@@ -36,18 +36,25 @@
  * From FreeBSD, who obtained it from dash, modified both times...
  */
 
-#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
 
 #ifndef lint
 __RCSID("$NetBSD: arithmetic.c,v 1.5 2018/04/21 23:01:29 kre Exp $");
 #endif /* not lint */
 
-#include <limits.h>
-#include <errno.h>
-#include <inttypes.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+//#include <limits.h>
+//#include <limits.h>
+//#include <errno.h>
+//#include <errno.h>
+//#include <inttypes.h>
+//#include <inttypes.h>
+//#include <stdlib.h>
+//#include <stdlib.h>
+//#include <stdio.h>
+//#include <stdio.h>
+//#include <string.h>
+//#include <string.h>
 
 #include "shell.h"
 #include "arithmetic.h"

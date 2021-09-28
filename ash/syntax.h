@@ -34,8 +34,10 @@
  * SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
-#include <ctype.h>
+//#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
+//#include <ctype.h>
+//#include <ctype.h>
 
 /* Syntax classes */
 #define CWORD 0			/* character is nothing special */

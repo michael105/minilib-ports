@@ -33,7 +33,8 @@
  *	@(#)show.h	1.1 (Berkeley) 5/4/95
  */
 
-#include <stdarg.h>
+//#include <stdarg.h>
+//#include <stdarg.h>
 
 #ifdef DEBUG
 union node;

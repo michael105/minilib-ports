@@ -32,7 +32,8 @@
  * SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
 #ifndef lint
 #if 0
 static char sccsid[] = "@(#)expand.c	8.5 (Berkeley) 5/15/95";
@@ -41,18 +42,30 @@ __RCSID("$NetBSD: expand.c,v 1.136 2019/10/14 13:34:14 christos Exp $");
 #endif
 #endif /* not lint */
 
-#include <sys/types.h>
-#include <sys/time.h>
-#include <sys/stat.h>
-#include <errno.h>
-#include <dirent.h>
-#include <unistd.h>
-#include <pwd.h>
-#include <limits.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <wctype.h>
-#include <wchar.h>
+//#include <sys/types.h>
+//#include <sys/types.h>
+//#include <sys/time.h>
+//#include <sys/time.h>
+//#include <sys/stat.h>
+//#include <sys/stat.h>
+//#include <errno.h>
+//#include <errno.h>
+//#include <dirent.h>
+//#include <dirent.h>
+//#include <unistd.h>
+//#include <unistd.h>
+//#include <pwd.h>
+//#include <pwd.h>
+//#include <limits.h>
+//#include <limits.h>
+//#include <stdlib.h>
+//#include <stdlib.h>
+//#include <stdio.h>
+//#include <stdio.h>
+//#include <wctype.h>
+//#include <wctype.h>
+//#include <wchar.h>
+//#include <wchar.h>
 
 /*
  * Routines to expand arguments to commands.  We have to deal with
@@ -1141,7 +1154,7 @@ varisset(const char *name, int nulok)
 		 * handle overflow sensibly (the *ap tests should never fail)
 		 */
 		errno = 0;
-		num = strtol(name, &ap, 10);
+		num = strtol(name, (const char**)&ap, 10);
 		if (errno != 0 || (*ap != '\0' && *ap != '='))
 			return 0;
 

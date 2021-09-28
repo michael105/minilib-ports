@@ -32,7 +32,8 @@
  * SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
 #ifndef lint
 #if 0
 static char sccsid[] = "@(#)options.c	8.2 (Berkeley) 5/4/95";
@@ -41,10 +42,14 @@ __RCSID("$NetBSD: options.c,v 1.55 2020/02/05 14:56:25 kre Exp $");
 #endif
 #endif /* not lint */
 
-#include <signal.h>
-#include <unistd.h>
-#include <stdint.h>
-#include <stdlib.h>
+//#include <signal.h>
+//#include <signal.h>
+//#include <unistd.h>
+//#include <unistd.h>
+//#include <stdint.h>
+//#include <stdint.h>
+//#include <stdlib.h>
+//#include <stdlib.h>
 
 #include "shell.h"
 #define DEFINE_OPTIONS

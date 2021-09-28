@@ -32,7 +32,8 @@
  * SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
 #ifndef lint
 #if 0
 static char sccsid[] = "@(#)mail.c	8.2 (Berkeley) 5/4/95";
@@ -44,11 +45,16 @@ __RCSID("$NetBSD: mail.c,v 1.18 2017/06/04 20:28:13 kre Exp $");
 /*
  * Routines to check for mail.  (Perhaps make part of main.c?)
  */
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <stdint.h>
-#include <stdlib.h>
-#include <string.h>
+//#include <sys/types.h>
+//#include <sys/types.h>
+//#include <sys/stat.h>
+//#include <sys/stat.h>
+//#include <stdint.h>
+//#include <stdint.h>
+//#include <stdlib.h>
+//#include <stdlib.h>
+//#include <string.h>
+//#include <string.h>
 
 #include "shell.h"
 #include "exec.h"	/* defines padvance() */

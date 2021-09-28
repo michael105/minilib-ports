@@ -32,7 +32,8 @@
  * SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
 #ifndef lint
 #if 0
 static char sccsid[] = "@(#)jobs.c	8.5 (Berkeley) 5/4/95";
@@ -41,31 +42,46 @@ __RCSID("$NetBSD: jobs.c,v 1.107 2020/02/07 02:06:12 kre Exp $");
 #endif
 #endif /* not lint */
 
-#include <stdint.h>
-#include <stdio.h>
-#include <fcntl.h>
-#include <signal.h>
-#include <errno.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <paths.h>
-#include <sys/types.h>
-#include <sys/param.h>
+//#include <stdint.h>
+//#include <stdint.h>
+//#include <stdio.h>
+//#include <stdio.h>
+//#include <fcntl.h>
+//#include <fcntl.h>
+//#include <signal.h>
+//#include <signal.h>
+//#include <errno.h>
+//#include <errno.h>
+//#include <unistd.h>
+//#include <unistd.h>
+//#include <stdlib.h>
+//#include <stdlib.h>
+//#include <paths.h>
+//#include <paths.h>
+//#include <sys/types.h>
+//#include <sys/types.h>
+//#include <sys/param.h>
+//#include <sys/param.h>
 #ifdef BSD
-#include <sys/wait.h>
-#include <sys/time.h>
-#include <sys/resource.h>
+//#include <sys/wait.h>
+//#include <sys/wait.h>
+//#include <sys/time.h>
+//#include <sys/time.h>
+//#include <sys/resource.h>
+//#include <sys/resource.h>
 #endif
-#include <sys/ioctl.h>
+//#include <sys/ioctl.h>
+//#include <sys/ioctl.h>
 
 #include "shell.h"
 #if JOBS
 #if OLD_TTY_DRIVER
 #include "sgtty.h"
 #else
-#include <termios.h>
+//#include <termios.h>
+//#include <termios.h>
 #endif
-#undef CEOF			/* syntax.h redefines this */
+//misc #undef CEOF			/* syntax.h redefines this */
 #endif
 #include "redir.h"
 #include "show.h"
@@ -498,7 +514,8 @@ showjob(struct output *out, struct job *jp, int mode)
 			else /* WIFSIGNALED(ps->status) */
 #endif
 				st = WTERMSIG(ps->status);
-			scopyn(strsignal(st), s + col, 32);
+			//misc: TODO
+			//scopyn(strsignal(st), s + col, 32);
 			if (WCOREDUMP(ps->status)) {
 				col += strlen(s + col);
 				scopyn(" (core dumped)", s + col,  64 - col);

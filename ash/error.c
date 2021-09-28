@@ -32,7 +32,8 @@
  * SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
 #ifndef lint
 #if 0
 static char sccsid[] = "@(#)error.c	8.2 (Berkeley) 5/4/95";
@@ -45,12 +46,18 @@ __RCSID("$NetBSD: error.c,v 1.43 2019/02/04 11:16:41 kre Exp $");
  * Errors and exceptions.
  */
 
-#include <signal.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <errno.h>
-#include <stdio.h>
-#include <string.h>
+//#include <signal.h>
+//#include <signal.h>
+//#include <stdlib.h>
+//#include <stdlib.h>
+//#include <unistd.h>
+//#include <unistd.h>
+//#include <errno.h>
+//#include <errno.h>
+//#include <stdio.h>
+//#include <stdio.h>
+//#include <string.h>
+//#include <string.h>
 
 #include "shell.h"
 #include "eval.h" /* for commandname */

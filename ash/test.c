@@ -10,7 +10,8 @@
  * This program is in the Public Domain.
  */
 
-#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
 #ifndef lint
 //__RCSID("$NetBSD: test.c,v 1.43 2018/09/13 22:00:58 kre Exp $");
 #endif
@@ -18,19 +19,31 @@
 #define __dead  __attribute__((__noreturn__))
 #define __printflike(x,y) 
 
-#include <sys/stat.h>
-#include <sys/types.h>
+//#include <sys/stat.h>
+//#include <sys/stat.h>
+//#include <sys/types.h>
+//#include <sys/types.h>
 
-#include <ctype.h>
-#include <err.h>
-#include <errno.h>
-#include <limits.h>
-#include <locale.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <stdarg.h>
+//#include <ctype.h>
+//#include <ctype.h>
+//#include <err.h>
+//#include <err.h>
+//#include <errno.h>
+//#include <errno.h>
+//#include <limits.h>
+//#include <limits.h>
+//#include <locale.h>
+//#include <locale.h>
+//#include <stdio.h>
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <stdlib.h>
+//#include <string.h>
+//#include <string.h>
+//#include <unistd.h>
+//#include <unistd.h>
+//#include <stdarg.h>
+//#include <stdarg.h>
 
 #define	__arraycount(__x)	(sizeof(__x) / sizeof(__x[0]))
 
@@ -884,7 +897,7 @@ newerf(const char *f1, const char *f2)
 
 	return (stat(f1, &b1) == 0 &&
 		stat(f2, &b2) == 0 &&
-		timespeccmp(&b1.st_mtim, &b2.st_mtim, >));
+		timespeccmp(&b1.st_mtime, &b2.st_mtime, >));
 }
 
 static int
@@ -894,7 +907,7 @@ olderf(const char *f1, const char *f2)
 
 	return (stat(f1, &b1) == 0 &&
 		stat(f2, &b2) == 0 &&
-		timespeccmp(&b1.st_mtim, &b2.st_mtim, <));
+		timespeccmp(&b1.st_mtime, &b2.st_mtime, <));
 }
 
 static int

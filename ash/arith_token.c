@@ -36,16 +36,21 @@
  * From FreeBSD, from dash
  */
 
-#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
 
 #ifndef lint
 //__RCSID("$NetBSD: arith_token.c,v 1.7 2017/12/17 04:06:03 kre Exp $");
 #endif /* not lint */
 
-#include <inttypes.h>
-#include <limits.h>
-#include <stdlib.h>
-#include <string.h>
+//#include <inttypes.h>
+//#include <inttypes.h>
+//#include <limits.h>
+//#include <limits.h>
+//#include <stdlib.h>
+//#include <stdlib.h>
+//#include <string.h>
+//#include <string.h>
 
 #include "shell.h"
 #include "arith_tokens.h"

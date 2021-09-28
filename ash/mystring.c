@@ -32,7 +32,8 @@
  * SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
 #ifndef lint
 #if 0
 static char sccsid[] = "@(#)mystring.c	8.2 (Berkeley) 5/4/95";
@@ -51,9 +52,12 @@ __RCSID("$NetBSD: mystring.c,v 1.18 2018/07/13 22:43:44 kre Exp $");
  *	is_number(s)		Return true if s is a string of digits.
  */
 
-#include <inttypes.h>
-#include <limits.h>
-#include <stdlib.h>
+//#include <inttypes.h>
+//#include <inttypes.h>
+//#include <limits.h>
+//#include <limits.h>
+//#include <stdlib.h>
+//#include <stdlib.h>
 #include "shell.h"
 #include "syntax.h"
 #include "error.h"

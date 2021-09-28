@@ -36,7 +36,8 @@
  *	@(#)error.h	8.2 (Berkeley) 5/4/95
  */
 
-#include <stdarg.h>
+//#include <stdarg.h>
+//#include <stdarg.h>
 
 /*
  * Types of operations (passed to the errmsg routine).
@@ -57,7 +58,8 @@
  * inner scope, and restore handler on exit from the scope.
  */
 
-#include <setjmp.h>
+//#include <setjmp.h>
+//#include <setjmp.h>
 
 struct jmploc {
 	jmp_buf loc;

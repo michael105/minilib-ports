@@ -29,7 +29,8 @@
  * SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
 #if !defined(lint) && !defined(SHELL)
 __COPYRIGHT("@(#) Copyright (c) 1988, 1993, 1994\
  The Regents of the University of California.  All rights reserved.");
@@ -43,19 +44,32 @@ __RCSID("$NetBSD: kill.c,v 1.30 2018/12/12 20:22:43 kre Exp $");
 #endif
 #endif /* not lint */
 
-#include <ctype.h>
-#include <err.h>
-#include <errno.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <limits.h>
-#include <inttypes.h>
-#include <string.h>
-#include <termios.h>
-#include <unistd.h>
-#include <locale.h>
-#include <sys/ioctl.h>
+//#include <ctype.h>
+//#include <ctype.h>
+//#include <err.h>
+//#include <err.h>
+//#include <errno.h>
+//#include <errno.h>
+//#include <signal.h>
+//#include <signal.h>
+//#include <stdio.h>
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <stdlib.h>
+//#include <limits.h>
+//#include <limits.h>
+//#include <inttypes.h>
+//#include <inttypes.h>
+//#include <string.h>
+//#include <string.h>
+//#include <termios.h>
+//#include <termios.h>
+//#include <unistd.h>
+//#include <unistd.h>
+//#include <locale.h>
+//#include <locale.h>
+//#include <sys/ioctl.h>
+//#include <sys/ioctl.h>
 
 #ifdef SHELL            /* sh (aka ash) builtin */
 int killcmd(int, char *argv[]);

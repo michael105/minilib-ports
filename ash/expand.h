@@ -36,7 +36,8 @@
  *	@(#)expand.h	8.2 (Berkeley) 5/4/95
  */
 
-#include <inttypes.h>
+//#include <inttypes.h>
+//#include <inttypes.h>
 
 struct strlist {
 	struct strlist *next;

@@ -38,7 +38,8 @@
 
 #ifndef OUTPUT_INCL
 
-#include <stdarg.h>
+//#include <stdarg.h>
+//#include <stdarg.h>
 
 struct output {
 	char *nextc;

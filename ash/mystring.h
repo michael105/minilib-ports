@@ -36,7 +36,8 @@
  *	@(#)mystring.h	8.2 (Berkeley) 5/4/95
  */
 
-#include <string.h>
+//#include <string.h>
+//#include <string.h>
 
 void scopyn(const char *, char *, int);
 int prefix(const char *, const char *);

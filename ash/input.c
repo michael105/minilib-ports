@@ -32,7 +32,8 @@
  * SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
 #ifndef lint
 #if 0
 static char sccsid[] = "@(#)input.c	8.3 (Berkeley) 6/9/95";
@@ -41,14 +42,22 @@ __RCSID("$NetBSD: input.c,v 1.71 2019/02/09 09:20:47 kre Exp $");
 #endif
 #endif /* not lint */
 
-#include <stdio.h>	/* defines BUFSIZ */
-#include <fcntl.h>
-#include <errno.h>
-#include <unistd.h>
-#include <limits.h>
-#include <stdlib.h>
-#include <string.h>
-#include <sys/stat.h>
+//#include <stdio.h>	/* defines BUFSIZ */
+//#include <stdio.h>	/* defines BUFSIZ */
+//#include <fcntl.h>
+//#include <fcntl.h>
+//#include <errno.h>
+//#include <errno.h>
+//#include <unistd.h>
+//#include <unistd.h>
+//#include <limits.h>
+//#include <limits.h>
+//#include <stdlib.h>
+//#include <stdlib.h>
+//#include <string.h>
+//#include <string.h>
+//#include <sys/stat.h>
+//#include <sys/stat.h>
 
 /*
  * This file implements the input routines used by the parser.
@@ -558,6 +567,10 @@ setinputfd(int fd, int push)
 void
 setinputstring(char *string, int push, int line1)
 {
+	if ( !string ){
+		printf("setinputstring - zero\n");
+		return;
+	}
 
 	INTOFF;
 	if (push)		/* XXX: always, as it happens */

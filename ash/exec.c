@@ -32,7 +32,8 @@
  * SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
 #ifndef lint
 #if 0
 static char sccsid[] = "@(#)exec.c	8.4 (Berkeley) 6/8/95";
@@ -41,15 +42,24 @@ __RCSID("$NetBSD: exec.c,v 1.53 2018/07/25 14:42:50 kre Exp $");
 #endif
 #endif /* not lint */
 
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <sys/wait.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <errno.h>
-#include <stdint.h>
-#include <stdio.h>
-#include <stdlib.h>
+//#include <sys/types.h>
+//#include <sys/types.h>
+//#include <sys/stat.h>
+//#include <sys/stat.h>
+//#include <sys/wait.h>
+//#include <sys/wait.h>
+//#include <unistd.h>
+//#include <unistd.h>
+//#include <fcntl.h>
+//#include <fcntl.h>
+//#include <errno.h>
+//#include <errno.h>
+//#include <stdint.h>
+//#include <stdint.h>
+//#include <stdio.h>
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <stdlib.h>
 
 /*
  * When commands are first encountered, they are entered in a hash table.
@@ -724,6 +734,8 @@ int
 	return 0;
 }
 
+//misc seems unused
+/*
 int
 (*find_splbltin(char *name))(int, char **)
 {
@@ -735,6 +747,7 @@ int
 	}
 	return 0;
 }
+*/
 
 /*
  * At shell startup put special builtins into hash table.
@@ -742,7 +755,8 @@ int
  * We stop functions being added with the same name
  * (as they are impossible to call)
  */
-
+//misc unused?
+/*
 void
 hash_special_builtins(void)
 {
@@ -755,7 +769,7 @@ hash_special_builtins(void)
 		cmdp->param.bltin = bp->builtin;
 	}
 }
-
+*/
 
 
 /*
@@ -1181,4 +1195,147 @@ typecmd(int argc, char **argv)
 		}
 	}
 	return err;
+}
+
+STATIC int
+describe_command(out, command, path, verbose)
+	struct output *out;
+	char *command;
+	const char *path;
+	int verbose;
+{
+	struct cmdentry entry;
+	struct tblentry *cmdp;
+	const struct alias *ap;
+
+	if (verbose) {
+		outstr(command, out);
+	}
+
+	//misc: TODO
+#if 0
+	/* First look at the keywords */
+	if (findkwd(command)) {
+		outstr(verbose ? " is a shell keyword" : command, out);
+		goto out;
+	}
+
+	/* Then look at the aliases */
+	if ((ap = lookupalias(command, 0)) != NULL) {
+		if (verbose) {
+			outfmt(out, " is an alias for %s", ap->val);
+		} else {
+			outstr("alias ", out);
+			printalias(ap);
+			return 0;
+		}
+		goto out;
+	}
+
+	/* Then if the standard search path is used, check if it is
+	 * a tracked alias.
+	 */
+	if (path == NULL) {
+		path = pathval();
+		cmdp = cmdlookup(command, 0);
+	} else {
+		cmdp = NULL;
+	}
+
+	if (cmdp != NULL) {
+		entry.cmdtype = cmdp->cmdtype;
+		entry.u = cmdp->param;
+	} else {
+		/* Finally use brute force */
+		find_command(command, &entry, DO_ABS, path);
+	}
+
+	switch (entry.cmdtype) {
+	case CMDNORMAL: {
+		int j = entry.u.index;
+		char *p;
+		if (j == -1) {
+			p = command;
+		} else {
+			do {
+				padvance(&path, command);
+			} while (--j >= 0);
+			p = stackblock();
+		}
+		if (verbose) {
+			outfmt(
+				out, " is%s %s",
+				cmdp ? " a tracked alias for" : nullstr, p
+			);
+		} else {
+			outstr(p, out);
+		}
+		break;
+	}
+
+	case CMDFUNCTION:
+		if (verbose) {
+			outstr(" is a shell function", out);
+		} else {
+			outstr(command, out);
+		}
+		break;
+
+	case CMDBUILTIN:
+		if (verbose) {
+			outfmt(
+				out, " is a %sshell builtin",
+				entry.u.cmd->flags & BUILTIN_SPECIAL ?
+					"special " : nullstr
+			);
+		} else {
+			outstr(command, out);
+		}
+		break;
+
+	default:
+		if (verbose) {
+			outstr(": not found\n", out);
+		}
+		return 127;
+	}
+
+#endif
+out:
+	outc('\n', out);
+	return 0;
+}
+
+
+
+int
+commandcmd(argc, argv)
+	int argc;
+	char **argv;
+{
+	char *cmd;
+	int c;
+	enum {
+		VERIFY_BRIEF = 1,
+		VERIFY_VERBOSE = 2,
+	} verify = 0;
+	const char *path = NULL;
+
+	while ((c = nextopt("pvV")) != '\0')
+		if (c == 'V')
+			verify |= VERIFY_VERBOSE;
+		else if (c == 'v')
+			verify |= VERIFY_BRIEF;
+#ifdef DEBUG
+		else if (c != 'p')
+			abort();
+#endif
+		else
+			path = "TODO";//defpath;
+
+	cmd = *argptr;
+	if (verify && cmd)
+		return describe_command(out1, cmd, path, verify - VERIFY_BRIEF);
+
+	return 0;
 }

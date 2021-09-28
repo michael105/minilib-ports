@@ -29,7 +29,8 @@
  * SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
 #ifndef lint
 #if !defined(BUILTIN) && !defined(SHELL)
 __COPYRIGHT("@(#) Copyright (c) 1989, 1993\
@@ -45,19 +46,31 @@ __RCSID("$NetBSD: printf.c,v 1.50 2019/07/22 17:34:31 kre Exp $");
 #endif
 #endif /* not lint */
 
-#include <sys/types.h>
+//#include <sys/types.h>
+//#include <sys/types.h>
 
-#include <ctype.h>
-#include <err.h>
-#include <errno.h>
-#include <inttypes.h>
-#include <limits.h>
-#include <locale.h>
-#include <stdarg.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
+//#include <ctype.h>
+//#include <ctype.h>
+//#include <err.h>
+//#include <err.h>
+//#include <errno.h>
+//#include <errno.h>
+//#include <inttypes.h>
+//#include <inttypes.h>
+//#include <limits.h>
+//#include <limits.h>
+//#include <locale.h>
+//#include <locale.h>
+//#include <stdarg.h>
+//#include <stdarg.h>
+//#include <stdio.h>
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <stdlib.h>
+//#include <string.h>
+//#include <string.h>
+//#include <unistd.h>
+//#include <unistd.h>
 
 #ifdef __GNUC__
 #define ESCAPE '\e'

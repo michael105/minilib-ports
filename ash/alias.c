@@ -32,7 +32,8 @@
  * SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
 #ifndef lint
 #if 1
 static char sccsid[] = "@(#)alias.c	8.3 (Berkeley) 5/4/95";
@@ -41,8 +42,10 @@ __RCSID("$NetBSD: alias.c,v 1.21 2019/02/09 09:11:07 kre Exp $");
 #endif
 #endif /* not lint */
 
-#include <stdint.h>
-#include <stdlib.h>
+//#include <stdint.h>
+//#include <stdint.h>
+//#include <stdlib.h>
+//#include <stdlib.h>
 #include "shell.h"
 #include "input.h"
 #include "output.h"

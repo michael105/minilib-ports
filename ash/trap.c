@@ -32,7 +32,8 @@
  * SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
 #ifndef lint
 #if 0
 static char sccsid[] = "@(#)trap.c	8.5 (Berkeley) 6/5/95";
@@ -41,20 +42,31 @@ __RCSID("$NetBSD: trap.c,v 1.53 2019/12/09 00:14:30 kre Exp $");
 #endif
 #endif /* not lint */
 
-#include <signal.h>
-#include <unistd.h>
-#include <stdint.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <errno.h>
-#include <limits.h>
-#include <termios.h>
+//#include <signal.h>
+//#include <signal.h>
+//#include <unistd.h>
+//#include <unistd.h>
+//#include <stdint.h>
+//#include <stdint.h>
+//#include <stdlib.h>
+//#include <stdlib.h>
+//#include <stdio.h>
+//#include <stdio.h>
+//#include <errno.h>
+//#include <errno.h>
+//#include <limits.h>
+//#include <limits.h>
+//#include <termios.h>
+//#include <termios.h>
 
-#undef	CEOF	/* from <termios.h> but concflicts with sh use */
+//misc #undef	CEOF	/* from <termios.h> but concflicts with sh use */
 
-#include <sys/ioctl.h>
-#include <sys/resource.h>
-#include <sys/signal.h>
+//#include <sys/ioctl.h>
+//#include <sys/ioctl.h>
+//#include <sys/resource.h>
+//#include <sys/resource.h>
+//#include <sys/signal.h>
+//#include <sys/signal.h>
 
 #include "shell.h"
 #include "main.h"
@@ -527,6 +539,8 @@ setsignal(int signo, int vforked)
 	int action;
 	sig_t sigact = SIG_DFL, sig;
 	char *t, tsig;
+	struct sigaction act;
+	struct sigaction act0;
 
 	if (traps_invalid || (t = trap[signo]) == NULL)
 		action = S_DFL;
@@ -579,7 +593,8 @@ setsignal(int signo, int vforked)
 		/*
 		 * current setting unknown
 		 */
-		if (!getsigaction(signo, &sigact)) {
+		//if (!getsigaction(signo, &sigact)) {
+		if (sigaction(signo, &act0, &act) == -1) {
 			/*
 			 * Pretend it worked; maybe we should give a warning
 			 * here, but other shells don't. We don't alter
@@ -633,8 +648,9 @@ setsignal(int signo, int vforked)
 		if (!vforked)
 			*t = action;
 
-		if (action == S_CATCH)
-			(void)siginterrupt(signo, 1);
+		//misc TODO
+		//if (action == S_CATCH)
+		//	(void)siginterrupt(signo, 1);
 		/*
 		 * If our parent accidentally blocked signals for
 		 * us make sure we unblock them

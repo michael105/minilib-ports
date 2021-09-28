@@ -33,10 +33,10 @@
  *	@(#)myhistedit.h	8.2 (Berkeley) 5/4/95
  */
 
-#include <histedit.h>
+//#include <histedit.h>
 
-extern History *hist;
-extern EditLine *el;
+//extern History *hist;
+//extern EditLine *el;
 extern int displayhist;
 
 void histedit(void);

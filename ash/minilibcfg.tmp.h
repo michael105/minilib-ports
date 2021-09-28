@@ -1,4 +1,4 @@
-#define mini_buf 4000
+#define mini_buf 40000
 #define HEADERGUARDS
 #define mini_start 
 #define INCLUDESRC
@@ -10,7 +10,6 @@
 #define mini_closedir generate
 #define mini_dup generate
 #define mini_dup2 generate
-#define mini_errx generate
 #define mini_execl generate
 #define mini_execve generate
 #define mini_exit generate
@@ -85,8 +84,27 @@
 #define mini_umask generate
 #define mini_unlink generate
 #define mini_waitpid generate
-#define mini_warn generate
 #define mini_write generate
 #define mini_getgrent generate
 #define mini_stpcpy generate
 #define mini_uname generate
+#define mini_setjmp
+#define mini_errno generate
+#define mini_times generate
+#define mini_getrlimit generate
+#define mini_geteuid generate
+#define mini_getegid generate
+#define mini_setrlimit generate
+#define mini_dup3 generate
+#define mini_killpg generate
+#define mini_bsearch generate
+#define mini_locale_dummies generate
+#define mini_strcspn generate
+#define mini_strspn generate
+#define mini_strtoimax generate
+#define mini_tcgetpgrp generate
+#define mini_tcsetpgrp generate
+#define mini_getopt
+#define mini_sys_signame generate
+#define mini_bsd_timespec generate
+#define mini_bsd_definitions generate

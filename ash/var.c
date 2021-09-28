@@ -32,7 +32,8 @@
  * SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
 #ifndef lint
 #if 0
 static char sccsid[] = "@(#)var.c	8.3 (Berkeley) 5/4/95";
@@ -41,16 +42,26 @@ __RCSID("$NetBSD: var.c,v 1.78 2019/02/14 11:15:24 kre Exp $");
 #endif
 #endif /* not lint */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <string.h>
-#include <paths.h>
-#include <limits.h>
-#include <time.h>
-#include <pwd.h>
-#include <fcntl.h>
-#include <inttypes.h>
+//#include <stdio.h>
+//#include <stdio.h>
+//#include <unistd.h>
+//#include <unistd.h>
+//#include <stdlib.h>
+//#include <stdlib.h>
+//#include <string.h>
+//#include <string.h>
+//#include <paths.h>
+//#include <paths.h>
+//#include <limits.h>
+//#include <limits.h>
+//#include <time.h>
+//#include <time.h>
+//#include <pwd.h>
+//#include <pwd.h>
+//#include <fcntl.h>
+//#include <fcntl.h>
+//#include <inttypes.h>
+//#include <inttypes.h>
 
 /*
  * Shell variables.

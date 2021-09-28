@@ -32,7 +32,8 @@
  * SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
 #ifndef lint
 #if 0
 static char sccsid[] = "@(#)redir.c	8.2 (Berkeley) 5/4/95";
@@ -41,15 +42,24 @@ __RCSID("$NetBSD: redir.c,v 1.66 2019/03/01 06:15:01 kre Exp $");
 #endif
 #endif /* not lint */
 
-#include <sys/types.h>
-#include <sys/param.h>	/* PIPE_BUF */
-#include <sys/stat.h>
-#include <signal.h>
-#include <string.h>
-#include <fcntl.h>
-#include <errno.h>
-#include <unistd.h>
-#include <stdlib.h>
+//#include <sys/types.h>
+//#include <sys/types.h>
+//#include <sys/param.h>	/* PIPE_BUF */
+//#include <sys/param.h>	/* PIPE_BUF */
+//#include <sys/stat.h>
+//#include <sys/stat.h>
+//#include <signal.h>
+//#include <signal.h>
+//#include <string.h>
+//#include <string.h>
+//#include <fcntl.h>
+//#include <fcntl.h>
+//#include <errno.h>
+//#include <errno.h>
+//#include <unistd.h>
+//#include <unistd.h>
+//#include <stdlib.h>
+//#include <stdlib.h>
 
 /*
  * Code for dealing with input/output redirection.
@@ -84,7 +94,9 @@ __RCSID("$NetBSD: redir.c,v 1.66 2019/03/01 06:15:01 kre Exp $");
 
 #ifndef F_DUPFD_CLOEXEC
 #define F_DUPFD_CLOEXEC	F_DUPFD
-#define CLOEXEC(fd)	(fcntl((fd), F_SETFD, fcntl((fd),F_GETFD) | FD_CLOEXEC))
+//misc
+//#define CLOEXEC(fd)	(fcntl((fd), F_SETFD, fcntl((fd),F_GETFD) | FD_CLOEXEC))
+#define CLOEXEC(fd)	(fcntl((fd), F_SETFD, fcntl((fd),F_GETFD,0) | FD_CLOEXEC))
 #else
 #define CLOEXEC(fd)
 #endif
@@ -831,13 +843,17 @@ getflags(int fd, int p)
 		error("Can't get status for fd=%d (%s)", fd,
 		    "Bad file descriptor");			/*XXX*/
 	}
-
-	if ((c = fcntl(fd, F_GETFD)) == -1) {
+	
+	//misc
+	//if ((c = fcntl(fd, F_GETFD)) == -1) {
+	if ((c = fcntl(fd, F_GETFD,0)) == -1) {
 		if (!p)
 			return -1;
 		error("Can't get status for fd=%d (%s)", fd, strerror(errno));
 	}
-	if ((f = fcntl(fd, F_GETFL)) == -1) {
+	//misc
+	//if ((f = fcntl(fd, F_GETFL)) == -1) {
+	if ((f = fcntl(fd, F_GETFL,0)) == -1) {
 		if (!p)
 			return -1;
 		error("Can't get flags for fd=%d (%s)", fd, strerror(errno));
@@ -947,7 +963,9 @@ fdflagscmd(int argc, char *argv[])
 	int verbose = 0, ch, pos = 0, neg = 0;
 	char *setflags = NULL;
 
-	optreset = 1; optind = 1; /* initialize getopt */
+	//misc ?
+	//optreset = 1; 
+	optind = 1; /* initialize getopt */
 	while ((ch = getopt(argc, argv, ":vs:")) != -1)
 		switch ((char)ch) {
 		case 'v':

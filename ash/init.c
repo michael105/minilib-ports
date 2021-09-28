@@ -5,7 +5,8 @@
 #include "shell.h"
 #include "mystring.h"
 #include "init.h"
-#include <stdint.h>
+//#include <stdint.h>
+//#include <stdint.h>
 
 
 

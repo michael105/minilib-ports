@@ -38,8 +38,10 @@
  *	@(#)nodes.c.pat	8.2 (Berkeley) 5/4/95
  */
 
-#include <stdlib.h>
-#include <stddef.h>
+//#include <stdlib.h>
+//#include <stdlib.h>
+//#include <stddef.h>
+//#include <stddef.h>
 
 /*
  * Routine for dealing with parsed shell commands.
@@ -124,11 +126,14 @@ copyfunc(union node *n)
 	if (n == NULL)
 		return NULL;
 	sz.bsize = offsetof(struct funcdef, n);
+	//sz.bsize = sizeof( unsigned int ) + 1;
+
 	sz.ssize = 0;
 	calcsize(n, &sz);
 	fn = ckmalloc(sz.bsize + sz.ssize);
 	fn->refcount = 1;
 	st.block = (char *)fn + offsetof(struct funcdef, n);
+	//st.block = (char *)fn + sizeof( unsigned int ) + 1; //offsetof(struct funcdef, n);
 	st.string = (char *)fn + sz.bsize;
 	copynode(n, &st);
 	return fn;

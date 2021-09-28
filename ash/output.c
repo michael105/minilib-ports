@@ -32,7 +32,8 @@
  * SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
 #ifndef lint
 #if 0
 static char sccsid[] = "@(#)output.c	8.2 (Berkeley) 5/4/95";
@@ -52,15 +53,23 @@ __RCSID("$NetBSD: output.c,v 1.40 2017/11/21 03:42:39 kre Exp $");
  *	Our output routines may be smaller than the stdio routines.
  */
 
-#include <sys/types.h>		/* quad_t */
-#include <sys/param.h>		/* BSD4_4 */
-#include <sys/ioctl.h>
+//#include <sys/types.h>		/* quad_t */
+//#include <sys/types.h>		/* quad_t */
+//#include <sys/param.h>		/* BSD4_4 */
+//#include <sys/param.h>		/* BSD4_4 */
+//#include <sys/ioctl.h>
+//#include <sys/ioctl.h>
 
-#include <stdio.h>	/* defines BUFSIZ */
-#include <string.h>
-#include <errno.h>
-#include <unistd.h>
-#include <stdlib.h>
+//#include <stdio.h>	/* defines BUFSIZ */
+//#include <stdio.h>	/* defines BUFSIZ */
+//#include <string.h>
+//#include <string.h>
+//#include <errno.h>
+//#include <errno.h>
+//#include <unistd.h>
+//#include <unistd.h>
+//#include <stdlib.h>
+//#include <stdlib.h>
 
 #include "shell.h"
 #include "syntax.h"

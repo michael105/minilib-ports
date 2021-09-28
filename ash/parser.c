@@ -32,7 +32,8 @@
  * SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
 #ifndef lint
 #if 0
 static char sccsid[] = "@(#)parser.c	8.7 (Berkeley) 5/16/95";
@@ -41,10 +42,14 @@ __RCSID("$NetBSD: parser.c,v 1.169 2019/12/10 09:18:37 kre Exp $");
 #endif
 #endif /* not lint */
 
-#include <limits.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
+//#include <limits.h>
+//#include <limits.h>
+//#include <signal.h>
+//#include <signal.h>
+//#include <stdio.h>
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <stdlib.h>
 
 #include "shell.h"
 #include "parser.h"

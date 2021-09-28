@@ -11,7 +11,9 @@ int breakcmd(int, char **);
 int cdcmd(int, char **);
 int commandcmd(int, char **);
 int dotcmd(int, char **);
+#ifdef ECHOBUILTIN
 int echocmd(int, char **);
+#endif
 int evalcmd(int, char **);
 int execcmd(int, char **);
 int exitcmd(int, char **);
@@ -21,13 +23,19 @@ int getoptscmd(int, char **);
 int hashcmd(int, char **);
 int jobscmd(int, char **);
 int localcmd(int, char **);
+#ifdef PRINTFBUILTIN
 int printfcmd(int, char **);
+#endif
 int pwdcmd(int, char **);
 int readcmd(int, char **);
 int returncmd(int, char **);
 int setcmd(int, char **);
 int shiftcmd(int, char **);
+
+#ifdef TIMESBUILTIN
 int timescmd(int, char **);
+#endif
+
 int trapcmd(int, char **);
 int truecmd(int, char **);
 int typecmd(int, char **);
@@ -37,13 +45,17 @@ int unsetcmd(int, char **);
 int waitcmd(int, char **);
 int aliascmd(int, char **);
 int ulimitcmd(int, char **);
+#ifdef TESTBUILTIN
 int testcmd(int, char **);
+#endif
 int killcmd(int, char **);
 
 const struct builtincmd builtincmd[] = {
 	{ ".", dotcmd, 3 },
 	{ ":", truecmd, 3 },
+#ifdef TESTBUILTIN
 	{ "[", testcmd, 0 },
+#endif
 	{ "alias", aliascmd, 6 },
 	{ "bg", bgcmd, 2 },
 	{ "break", breakcmd, 3 },
@@ -51,7 +63,9 @@ const struct builtincmd builtincmd[] = {
 	{ "chdir", cdcmd, 0 },
 	{ "command", commandcmd, 2 },
 	{ "continue", breakcmd, 3 },
+#ifdef ECHOBUILTIN
 	{ "echo", echocmd, 0 },
+#endif
 	{ "eval", NULL, 3 },
 	{ "exec", execcmd, 3 },
 	{ "exit", exitcmd, 3 },
@@ -63,15 +77,21 @@ const struct builtincmd builtincmd[] = {
 	{ "jobs", jobscmd, 2 },
 	{ "kill", killcmd, 2 },
 	{ "local", localcmd, 7 },
+#ifdef PRINTFBUILTIN
 	{ "printf", printfcmd, 0 },
+#endif
 	{ "pwd", pwdcmd, 2 },
 	{ "read", readcmd, 2 },
 	{ "readonly", exportcmd, 7 },
 	{ "return", returncmd, 3 },
 	{ "set", setcmd, 3 },
 	{ "shift", shiftcmd, 3 },
+#ifdef TESTBUILTIN
 	{ "test", testcmd, 0 },
+#endif
+#ifdef TIMESBUILTIN
 	{ "times", timescmd, 3 },
+#endif
 	{ "trap", trapcmd, 3 },
 	{ "true", truecmd, 2 },
 	{ "type", typecmd, 2 },

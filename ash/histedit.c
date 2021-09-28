@@ -32,7 +32,8 @@
  * SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
 #ifndef lint
 #if 0
 static char sccsid[] = "@(#)histedit.c	8.2 (Berkeley) 5/4/95";
@@ -41,12 +42,18 @@ __RCSID("$NetBSD: histedit.c,v 1.55 2019/02/10 19:21:52 kre Exp $");
 #endif
 #endif /* not lint */
 
-#include <sys/param.h>
-#include <paths.h>
-#include <stdint.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
+//#include <sys/param.h>
+//#include <sys/param.h>
+//#include <paths.h>
+//#include <paths.h>
+//#include <stdint.h>
+//#include <stdint.h>
+//#include <stdio.h>
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <stdlib.h>
+//#include <unistd.h>
+//#include <unistd.h>
 /*
  * Editline and history functions (and glue).
  */

@@ -32,7 +32,8 @@
  * SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
+//#include <sys/cdefs.h>
 #ifndef lint
 #if 0
 static char sccsid[] = "@(#)cd.c	8.2 (Berkeley) 5/4/95";
@@ -41,13 +42,20 @@ __RCSID("$NetBSD: cd.c,v 1.50 2017/07/05 20:00:27 kre Exp $");
 #endif
 #endif /* not lint */
 
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <stdint.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <errno.h>
+//#include <sys/types.h>
+//#include <sys/types.h>
+//#include <sys/stat.h>
+//#include <sys/stat.h>
+//#include <stdint.h>
+//#include <stdint.h>
+//#include <stdlib.h>
+//#include <stdlib.h>
+//#include <string.h>
+//#include <string.h>
+//#include <unistd.h>
+//#include <unistd.h>
+//#include <errno.h>
+//#include <errno.h>
 
 /*
  * The cd and pwd commands.

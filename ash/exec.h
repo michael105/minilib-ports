@@ -69,7 +69,8 @@ void shellexec(char **, char **, const char *, int, int) __dead;
 char *padvance(const char **, const char *, int);
 void find_command(char *, struct cmdentry *, int, const char *);
 int (*find_builtin(char *))(int, char **);
-int (*find_splbltin(char *))(int, char **);
+//misc seems unused
+//int (*find_splbltin(char *))(int, char **);
 void hashcd(void);
 void changepath(const char *);
 void deletefuncs(void);
@@ -77,7 +78,7 @@ void getcmdentry(char *, struct cmdentry *);
 union node;
 void defun(char *, union node *, int);
 int unsetfunc(char *);
-void hash_special_builtins(void);
+//void hash_special_builtins(void);
 
 #endif
 
