@@ -1,8 +1,8 @@
 
 #define SMALL
-#define TINY
+//#define TINY
 
-#define SHELL
+//#define SHELL
 
 #define __printflike(x,y) 
 #define __dead  __attribute__((__noreturn__))
@@ -26,8 +26,18 @@
 
 #define DEFINE_OPTIONS 
 
+#undef CEOF
+
 //#define __predict_true(x) __builtin_expect(x,1)  
 //#define __predict_false(x) __builtin_expect(x,0)  
+
+
+#define kmalloc malloc
+#define krealloc realloc
+#define kcalloc calloc
+#define kfree free
+#include "kmalloc.c"
+
 
 
 #include "alias.c"

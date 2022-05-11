@@ -32,7 +32,7 @@
 //#include <sys/cdefs.h>
 //#include <sys/cdefs.h>
 #if !defined(lint) && !defined(SHELL)
-__COPYRIGHT("@(#) Copyright (c) 1988, 1993, 1994\
+//__COPYRIGHT("@(#) Copyright (c) 1988, 1993, 1994\
  The Regents of the University of California.  All rights reserved.");
 #endif /* not lint */
 
@@ -40,7 +40,7 @@ __COPYRIGHT("@(#) Copyright (c) 1988, 1993, 1994\
 #if 0
 static char sccsid[] = "@(#)kill.c	8.4 (Berkeley) 4/28/95";
 #else
-__RCSID("$NetBSD: kill.c,v 1.30 2018/12/12 20:22:43 kre Exp $");
+//__RCSID("$NetBSD: kill.c,v 1.30 2018/12/12 20:22:43 kre Exp $");
 #endif
 #endif /* not lint */
 
@@ -78,7 +78,7 @@ int killcmd(int, char *argv[]);
 #endif /* SHELL */ 
 
 __dead static void nosig(const char *);
-void printsignals(FILE *, int);
+void kill_printsignals(FILE *, int);
 static int signum(const char *);
 static pid_t processnum(const char *);
 __dead static void usage(void);
@@ -88,8 +88,9 @@ extern int signalnext(int);
 extern int signalnumber(const char *);
 
 int
-main(int argc, char *argv[])
+killcmd(int argc, char *argv[])
 {
+#if 0
 	int errors;
 	int numsig;
 	pid_t pid;
@@ -133,7 +134,7 @@ main(int argc, char *argv[])
 				printf("%s\n", sn);
 				exit(0);
 			}
-			printsignals(stdout, 0);
+			kill_printsignals(stdout, 0);
 			exit(0);
 
 		case 's':
@@ -226,6 +227,7 @@ main(int argc, char *argv[])
 
 	exit(errors);
 	/* NOTREACHED */
+#endif
 }
 
 static int
@@ -267,7 +269,7 @@ nosig(const char *name)
 {
 
 	warnx("unknown signal %s; valid signals:", name);
-	printsignals(stderr, 0);
+	kill_printsignals(stderr, 0);
 	exit(1);
 	/* NOTREACHED */
 }
@@ -279,7 +281,7 @@ nosig(const char *name)
  * the current output line (in kill.c, always 0)
  */
 void
-printsignals(FILE *fp, int len)
+kill_printsignals(FILE *fp, int len)
 {
 	int sig;
 	int nl, pad;

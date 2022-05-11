@@ -1131,6 +1131,8 @@ trySystem(const char * cmd)
 
 	status = system(cmd);
 
+	dbg("system, ret: %d\n",status);
+
 	if (status == -1)
 		fprintf(stderr, "Error starting command: %s\n", cmd);
 

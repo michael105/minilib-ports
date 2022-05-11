@@ -812,8 +812,8 @@ tryBuiltIn(const char * cmd)
 	 * command name to a buffer so we can null terminate it.
 	 */
 	endCmd = cmd;
-#undef dbg
-#define dbg(...) {}
+//#undef dbg
+//#define dbg(...) {}
 
 	dbg("d HOME: %s\n",getenv("HOME"));
 	while (*endCmd && !isBlank(*endCmd))

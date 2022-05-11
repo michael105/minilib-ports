@@ -1,4 +1,4 @@
-#define mini_buf 40000
+#define mini_buf 4000
 #define HEADERGUARDS
 #define mini_start 
 #define INCLUDESRC
@@ -108,3 +108,5 @@
 #define mini_sys_signame generate
 #define mini_bsd_timespec generate
 #define mini_bsd_definitions generate
+#define mini_malloc_c ""
+#define mini_sbrk generate

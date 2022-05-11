@@ -2615,6 +2615,9 @@ getprompt(void *unused)
 	const char *cp;
 	int wp;
 
+	// DBG
+	return " X ";
+
 	if (!doprompt)
 		return "";
 
