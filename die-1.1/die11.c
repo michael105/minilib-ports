@@ -463,7 +463,8 @@ puts("\n"
 "                     You can call die with any number of commands (processes) \n"
 "                     to kill.  If die does not find a match for an argument, \n"
 "                     it will silently terminate.  If it does find a match, \n"
-"                     it will just as silently kill the job.  You will probably                       recieve a message from UNIX though, telling you that a \n"
+"                     it will just as silently kill the job.  You will probably\n"
+"                     recieve a message from UNIX though, telling you that a \n"
 "                     job has just been killed. \n"
 "\n"
 "Legal stuff:         die is freeware.  I retain all rights to the code, but \n"
@@ -542,7 +543,7 @@ puts("\n"
 "       me a note.  I'd like to know wether or not I just\n"
 "       wasted my time on this thing.  :-)\n"
 "\n"
-"");\
+"\n");
 }
 /******************************************************************************
 FUNCTION: 'pslist' gives a listing of the 'ps -x' state at the time of 
