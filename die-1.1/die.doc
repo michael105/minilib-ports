@@ -1,0 +1,186 @@
+ 
+                               <----- die -----> 
+                                 (Version 1.1) 
+                             
+ 
+Program description:  die is a UNIX utility which will allow you to kill a 
+                      job by process name, instead of number.  Instead of  
+                      having to do a 'ps -x' to find the process you want, 
+                      look up the PID number, and do a 'kill <PID number>', 
+                      you can just do 'die <process>'.  If you are running 
+                      more than one process of the same name, die will 
+                      prompt you on wether or not to kill each one, unless 
+                      you used the -f switch, in which case die runs amok 
+                      through the process table, killing all your matching 
+                      processes, with sickening glee and enthusiasm.  
+                    
+                      You can call die with any number of commands (processes) 
+                      to kill.  If die does not find a match for an argument, 
+                      it will silently terminate.  If it does find a match, 
+                      it will just as silently kill the job.  You will probably 
+                      recieve a message from UNIX though, telling you that a 
+                      job has just been killed. 
+ 
+ 
+Legal stuff:          die is freeware.  I retain all rights to the code, but 
+                      you are free to use or alter it in any way you like, as  
+                      long as any program or application it is used in (or with) 
+                      is freeware as well, and I am given credit for my work.   
+                      If for some unfathonable reason, you want to use this code 
+                      in a commercial software package, send me some mail or  
+                      something and, assuming I haven't won the lottery or had 
+                      a rich uncle kick the bucket, I'll tailor something to  
+                      your exact specifications.  For a fee, of course!  :-) 
+ 
+                       
+Compatability:        die has been tested successfully on SunOS 4.1.2 machines, 
+                      an Amiga 4000 and an Amiga 3000 both running NetBSD, and
+                      an Intel P5 running Linux.  It should be fairly  
+                      portable across unices; if you can run gcc, you should be 
+                      able to use die as well. 
+                      
+ 
+ 
+Availability: Currently only via WWW. 
+ 
+   http://www.cs.fredonia.edu/~stei0302/PUB/SOURCE/MYSTUFF/die11.tar.gz 
+  
+ 
+Files: die11.c - die source code.  Should be 100% ANSI C compatible, but 
+               don't quote me on that...  ;-) 
+       die.doc - die documentation.  (this file) 
+ 
+ 
+Compile as: gcc -o die die11.c  (real tough, huh?) :) 
+ 
+ 
+Execution: die [-cfhil] [process(es)]  
+           
+           Running die with no arguments will give you the option list. 
+ 
+           Options (switches): 
+ 
+           c = Careful mode.  die will prompt you on wether or not to kill 
+               each and every matching process it finds. 
+ 
+           i = Interactive mode.  die will give you a list of the processes 
+               which are running, ask you which ones to kill, and ask you 
+               which mode to kill them in.  (careful, force, normal, or 
+               in the same mode that you killed processes in last time; or 
+               if this is the first "loop", in the mode that you called 
+               die with.)  If you specify processes to kill when starting 
+               die in interactive mode, die will take care of them first, 
+               using the mode you specify at the command line. 
+ 
+           f = Force mode.  Die will take the process names given at the 
+               command line and kill every occurence of them in the  
+               process table, *without* asking permission.  In other  
+               words, 'die -f sh' is a real quick way to log out.  ;-) 
+ 
+           l = List mode.  die will give you a listing of the processes  
+               currently running before killing anything off.  Calling die 
+               with -l and no processes will simply give you the process 
+               list. 
+ 
+           h = Help mode.  Calling die with -h will bring up a bunch of  
+               helpful info and some other stuff.  (More detailed help 
+               than can be obtained by just running die with no (or  
+               invalid) arguments.) 
+
+ 
+           Various switch examples: 
+ 
+               'die Mosaic' - If you are running Mosaic once, die will kill 
+                              it.  If you are running more than one, die  
+                              asks for permission to kill off each process. 
+ 
+               'die -c Mosaic' - Doesn't matter how many Mosaics you are  
+                                 running.  die will prompt you for the kill 
+                                 on each one. 
+ 
+               'die -f Mosaic' - die kills off every occurance of Mosaic  
+                                 it finds. 
+ 
+               'die -fc Mosaic' - This would be stupid.  
+ 
+               'die -i Mosaic' - die tries to kill off Mosaic in exactly the 
+                                 same way as for 'die Mosaic', but it then 
+                                 gives you a list of your processes, and asks 
+                                 you if you want to kill off more. 
+                
+               'die -ic Mosaic' - die tries to kill off Mosaic in exactly the 
+                                  same way as for 'die -c Mosaic', but it then 
+                                  gives you a list of your processes, and asks 
+                                  you if you want to kill off more. 
+ 
+               'die -if Mosaic' - die tries to kill off Mosaic in exactly the 
+                                  same way as for 'die -f Mosaic', but it then 
+                                  gives you a list of your processes, and asks 
+                                  you if you want to kill off more. 
+ 
+               'die -ifc Mosaic' - This would also be stupid. 
+ 
+               'die -l Mosaic' - die gives you a list of your processes, and 
+                                 then tries to kill off Mosaic in the normal 
+                                 manner.  
+ 
+               'die -lc Mosaic' - die gives you a list of your processes, and 
+                                  then tries to kill off Mosaic in careful 
+                                  mode.  
+               
+               'die -lf Mosaic' - die gives you a list of your processes, and 
+                                  then tries to kill off Mosaic in force mode.
+
+               'die -lfc Mosaic' - Stop that!!!  Stupid, stupid, stupid!!  
+   
+            
+                Note: You can run die with both -l and -i switches, although 
+                      that's just a waste of keystrokes, since -i will give 
+                      you a listing anyway. 
+
+                Note: Capital letters are ok to use as switches too, but keep
+                      in mind that 'die -FC Mosaic' is no less stupid than 
+                      'die -fc Mosaic'. :)
+ 
+VERY, VERY IMPORTANT:  die cannot, and therefore does not kill your processes
+                       by 'program name'.  It looks for substring matches in 
+                       the process table (ps -x).  This can be both good or
+                       bad.  
+
+     The good:  Someone breaks into your account, and they are on ttyp0.  You
+                type 'die -f ttyp0' and they're toast, along with anything
+                they may have been running.
+
+     The bad:  You are editing the file, 'tin.txt'.  You are also in tin, 
+               reading alt.cows.moo.moo.moo.  Tin locks up, so you throw
+               it in the background, and type 'die -f tin'.  Guess what?
+               I hope you saved 'tin.txt' recently, because your revisions
+               just got a one-way ticket to /dev/null.  Obviously, if you
+               had just used 'die tin', it would have asked for a confirmation 
+               on both 'tin' and 'vi tin.txt', and you would have said, 
+               "Wow, what a great program!  I think I'll put Jon in my will!"
+               Just keep your wits about you, and you will be fine.
+
+      The ugly:  You just leave that to me, ok?
+   
+        
+Program history:  Late February 1995 - die is born. 
+                  Late March 1995 - Version 1.1 is released. 
+                      - added modes: careful, help, interactive, and list.
+                      - tried to make the documentation a little clearer.
+ 
+ 
+Many thanks to:  Chris O'Malley for some very helpful information, and  
+                 Jake Smith for helpful information, sample code, comments, 
+                 and all kinds of cool stuff. 
+ 
+ 
+Bug reports / comments to: stei0302@cs.fredonia.edu 
+
+                           If you use/like die, please take a moment to drop
+                           me a note.  I'd like to know wether or not I just
+                           wasted my time on this thing.  :-)
+ 
+ 
+Author:  Jon N. Steiger (currently mired down in the void of opression that  
+         is sometimes called SUNY at Fredonia) / stei0302@cs.fredonia.edu 

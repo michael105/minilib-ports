@@ -1,0 +1,14 @@
+
+   To install die, simply type: "gcc -o die die.c" (no quotes).
+
+  This will create the executeable "die".  You may then place this 
+somewhere in your path, or wherever you like...
+
+
+                                              -Jon-
+
+ .-------------------------------------------------------------------------.
+ | Jon Steiger == DoD# 1038 == USUA# A46209 == NMA# 117376 == KotWitDoDFAQ |
+ |   stei0302@cs.fredonia.edu  &&  http://www.cs.fredonia.edu/~stei0302/   |
+ |     '91 3000GT VR-4, '91 FZR600R    /* Just another mangy hacker */     |
+ `-------------------------------------------------------------------------'
