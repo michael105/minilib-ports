@@ -101,7 +101,6 @@ mini_malloc
 mini_printf
 mini_putchar
 mini_putenv
-mini_puts
 mini_signal
 mini_strcat
 mini_strchr
@@ -110,6 +109,9 @@ mini_strlen
 mini_strstr
 mini_system
 
+
+mini_puts
+COMPILE writes
 
 return
 endif

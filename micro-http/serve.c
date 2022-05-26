@@ -414,30 +414,28 @@ void send_response(
 
 	// Set the first status line
 	char* header_line = malloc(BUFSIZE);
-	sprintf(
-		header_line, "%s %d %s\n",
+	dprintf( sockfd,
+		//header_line, 
+		"%s %d %s\n",
 		res->protocol,
 		res->status_code,
 		res->status_message
 	);
-	write(sockfd, header_line, strlen(header_line));
+	//write(sockfd, header_line, strlen(header_line));
 
 	// Write the headers
 	// Iterate through the headers, sprintf them into the right format, store
 	// them in the temp, and write them to the stream
 	char* header = malloc(BUFSIZE);
 	for(int i=0; i < res->header_count; ++i ) {
-		sprintf(
-			header,
-			"%s: %s\n",
+		dprintf( sockfd,
+			//header,
+			"%s: %s\n\n",
 			res->headers[i].field,
 			res->headers[i].value
 		);
-		write(sockfd, header, strlen(header));
+		//write(sockfd, header, strlen(header));
 	}
-
-	// Write a newline to separate the headers and the body
-	write(sockfd, "\n", 1);
 
 	// Write the response body
 	// Determine the absolute path to the requested resource
@@ -473,13 +471,13 @@ void send_response(
 		DIR *directory;
 		struct dirent *dir_struct;
 		char current_line[BIGBUFSIZE];
-		char* dirtemp = malloc(BIGBUFSIZE);
+		char* dirtemp = malloc(BIGBUFSIZE); // this is leaking. 
 		char* resource_path_ptr = malloc(BIGBUFSIZE);
 		directory = opendir(full_resource_path);
 
 		// Begin rendering the HTML for the file listing
-		strcpy(current_line, "<html><body><h1>File Listing</h1><ul>");
-		write(sockfd, current_line, strlen(current_line));
+		fwrites(sockfd, "<html><body><h1>File Listing</h1><ul>\n");
+		//write(sockfd, current_line, strlen(current_line));
 		if (directory) {
 			resource_path_ptr = resource_path;
 			if (!strcmp(resource_path_ptr, "/")) {
@@ -497,21 +495,15 @@ void send_response(
 				while(*dirtemp == '/') {
 					dirtemp++;
 				}
-				if(!strlen(resource_path_ptr)) {
-					sprintf(current_line, "<a href=\"%s/%s\"><li>%s</li></a>", 
-							resource_path_ptr, dirtemp, dirtemp);
-				}
-				else {
-					sprintf(current_line, "<a href=\"/%s/%s\"><li>%s</li></a>", 
+
+				dprintf(sockfd, "<a href=\"%s/%s\"><li>%s</li></a>\n", 
 							resource_path_ptr, dirtemp, dirtemp);
 
-				}
-				write(sockfd, current_line, strlen(current_line));
 			}
 			closedir(directory);
 		}
-		strcpy(current_line, "</ul></body></html>");
-		write(sockfd, current_line, strlen(current_line));
+		fwrites(sockfd, "</ul></body></html>\n\n");
+		//write(sockfd, current_line, strlen(current_line));
 	}
 
 	free(header);
@@ -527,6 +519,7 @@ void send_response(
  */
 int handler(int sockfd) {
 	// Allocate buffers to read the request
+	// missing free
 	char *request = malloc(BUFSIZE);
 	struct request_frame req;
 	struct response_frame res;

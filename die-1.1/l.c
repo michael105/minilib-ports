@@ -13,7 +13,6 @@
 #define mini_printf printf
 #define mini_putchar putchar
 #define mini_putenv putenv
-#define mini_puts puts
 #define mini_signal signal
 #define mini_strcat strcat
 #define mini_strchr strchr
@@ -21,6 +20,8 @@
 #define mini_strlen strlen
 #define mini_strstr strstr
 #define mini_system system
+#define mini_puts puts
+#define mini_writes writes
 #include <minilib.h>
 #include "die11.c"
 
