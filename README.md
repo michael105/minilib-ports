@@ -23,8 +23,7 @@ built with gcc 9.3 (Gentoo).
 
 
 
-
-misc 2021
+misc 2022
 
 
 ----
@@ -34,13 +33,13 @@ misc 2021
 
 bin_x64/daft-dhcp-client       2021-09-24             10912
 bin_x64/micro-http             2021-09-20             8192
-bin_x64/sash                   2021-09-20             28220
-bin_x64/sed                    2021-09-23             14192
+bin_x64/sash                   2022-05-26             32772
+bin_x64/sed                    2022-05-26             16656
 bin_x64/smu                    2021-09-20             10872
 bin_x64/snake                  2021-09-20             8204
 bin_x64/snake-mikro            2021-09-20             8204
-bin_x64/splitvt                2021-09-20             22488
-bin_x64/totp                   2021-09-20             9664
+bin_x64/splitvt                2022-05-26             24728
+bin_x64/totp                   2022-05-26             9696
 ===========================================================
-                                        size: 120948 Bytes
+                                        size: 130236 Bytes
 ```
