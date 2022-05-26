@@ -1242,7 +1242,7 @@ int
 do_printenv(int argc, const char ** argv)
 {
 	const char **	env;
-	extern char **	environ;
+	//extern char **	environ;
 	int		len;
 
 	env = (const char **) environ;

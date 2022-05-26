@@ -10,10 +10,10 @@
 #define	SASH_H
 //#include "minilib.h"
 
-#define _dbg(...) fprintf(stderr,__VA_ARGS__)
-//#define _dbg(...) {}
-#undef dbg
-#define dbg(...) _dbg(__VA_ARGS__)
+//#define _dbg(...) fprintf(stderr,__VA_ARGS__)
+#define dbg(...) {}
+//#undef dbg
+//#define dbg(...) _dbg(__VA_ARGS__)
 
 #define	PATH_LEN	1024
 #define	CMD_LEN		10240

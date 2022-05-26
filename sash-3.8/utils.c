@@ -920,8 +920,8 @@ makeArgs(const char * cmd, int * retArgc, const char *** retArgv)
 
 	*retArgc = argCount;
 	*retArgv = argTable;
-#undef dbg
-#define dbg(...) _dbg(__VA_ARGS__)
+//#undef dbg
+//#define dbg(...) _dbg(__VA_ARGS__)
 
  	return TRUE;
 }

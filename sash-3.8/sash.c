@@ -868,8 +868,8 @@ tryBuiltIn(const char * cmd)
 	 */
 	entry->func(argc, argv);
 
-#undef dbg
-#define dbg(...) _dbg(__VA_ARGS__)
+//#undef dbg
+//#define dbg(...) _dbg(__VA_ARGS__)
 
 	return TRUE;
 }
@@ -958,7 +958,8 @@ runCmd(const char * cmd)
 	while (((pid = waitpid(pid, &status, 0)) < 0) && (errno == EINTR))
 	{ fprintf(stderr,"waitpid, errno: %d\n", errno); } ;
 	dbg("waitpid out, errno: %d\n", errno); 
-	fprintf(stderr,"status %d\n", status); 
+	//fprintf(stderr,"status %d\n", status); 
+	dbg("status %d\n", status); 
 	//dbg
 
 	intCrlf = TRUE;
